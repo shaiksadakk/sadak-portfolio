@@ -7,141 +7,321 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-    html { font-size: 100%; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    html {
+      font-size: 110%;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(to bottom right, #fceff9, #e0f7fa);
+      background: linear-gradient(to bottom right, #d0e8f2, #9dd6f9); /* Soft neon bluish background */
       color: #111;
       line-height: 1.8;
-      overflow-x: hidden;
     }
-    header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; background: #ffffff; box-shadow: 0 2px 12px rgba(0,0,0,0.1); width: 100%; animation: fadeInDown 1s ease; }
-    header h1 { font-family: 'Orbitron', sans-serif; font-size: 2.5rem; color: #6c5ce7; }
-    nav a { margin-left: 1.5rem; color: #111; text-decoration: none; font-weight: 600; transition: 0.3s ease; font-size: 1.1rem; }
-    nav a:hover { color: #6c5ce7; transform: scale(1.05); }
-    .hero { text-align: center; color: #fff; padding: 6rem 2rem; background: linear-gradient(to right, #6c5ce7, #00b894); animation: zoomIn 1.2s ease-in; }
-    .hero h2 { font-size: 3rem; animation: typing 4s steps(40, end), blink .75s step-end infinite; white-space: nowrap; overflow: hidden; border-right: 3px solid #fff; width: fit-content; margin: 0 auto; color: #fceff9; }
-    .hero p { font-size: 1.4rem; margin-top: 1.5rem; animation: fadeInUp 1.5s ease; }
-    section { padding: 4rem 5vw; width: 100%; animation: fadeIn 2s ease; }
-    h2 { font-size: 2.4rem; margin-bottom: 2rem; color: #6c5ce7; }
-    .skills, .projects, .certifications { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-    .card { background: #fff; padding: 2rem; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); transition: 0.3s ease; animation: slideUp 1s ease; }
-    .card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(0,0,0,0.15); }
-    .card h3 { color: #6c5ce7; margin-bottom: 1rem; font-size: 1.5rem; }
-    .card a { display: inline-block; margin-top: 1rem; color: #0984e3; font-weight: 600; text-decoration: underline; font-size: 1rem; }
-    .resume-download { margin-top: 2rem; text-align: center; }
-    .download-btn { background: #fd79a8; color: #fff; padding: 1rem 2rem; font-weight: bold; text-decoration: none; border-radius: 10px; transition: 0.4s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.2); font-size: 1.1rem; }
-    .download-btn:hover { background: #e84393; transform: translateY(-3px) scale(1.03); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
-    .download-btn i { margin-right: 8px; }
-    .contact { text-align: center; }
-    .contact p, .contact a { color: #0984e3; font-weight: bold; font-size: 1.2rem; }
-    .social-icons { margin-top: 1.5rem; animation: fadeInUp 1.5s ease; }
-    .social-icons a { color: #6c5ce7; margin: 0 20px; font-size: 2.6rem; transition: 0.3s ease; }
-    .social-icons a:hover { transform: scale(1.2); color: #00cec9; }
-    footer { text-align: center; padding: 2rem; background-color: #f1f2f6; font-size: 1rem; animation: fadeInUp 2s ease; }
-    @keyframes typing { from { width: 0; } to { width: 100%; } }
-    @keyframes blink { from, to { border-color: transparent; } 50% { border-color: white; } }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-    @keyframes zoomIn { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      background: #ffffff;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      width: 100%;
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      color: #6c5ce7;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      color: #111;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s ease;
+      font-size: 1.1rem;
+    }
+
+    nav a:hover {
+      color: #6c5ce7;
+      transform: scale(1.05);
+    }
+
+    .hero {
+      text-align: center;
+      color: #fff;
+      padding: 6rem 2rem;
+      background: linear-gradient(to right, #6c5ce7, #00b894);
+    }
+
+    .hero h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: white; /* Added explicitly to fix visibility */
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      color: #fceff9;
+    }
+
+    .hero .hire-btn {
+      background: #fd79a8;
+      color: #fff;
+      padding: 1rem 2rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: 0.4s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      font-size: 1.1rem;
+      display: inline-block;
+    }
+
+    .hero .hire-btn:hover {
+      background: #e84393;
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    section {
+      padding: 4rem 5vw;
+      width: 100%;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      margin-bottom: 2rem;
+      color: #6c5ce7;
+    }
+
+    .skills, .projects, .certifications {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: #ffffff;
+      color: #111;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+      color: #6c5ce7;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #0984e3;
+      font-weight: 600;
+      text-decoration: underline;
+      font-size: 1rem;
+    }
+
+    .resume-download {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .download-btn {
+      background: #fd79a8;
+      color: #fff;
+      padding: 1rem 2rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: 0.4s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      font-size: 1.1rem;
+    }
+
+    .download-btn:hover {
+      background: #e84393;
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    .download-btn i {
+      margin-right: 8px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p, .contact a {
+      color: #0984e3;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .social-icons {
+      margin-top: 1.5rem;
+    }
+
+    .social-icons a {
+      color: #6c5ce7;
+      margin: 0 20px;
+      font-size: 2.6rem;
+      transition: 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+      color: #00cec9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #f1f2f6;
+      font-size: 1rem;
+    }
+
     @media (max-width: 768px) {
-      .hero h2 { font-size: 2rem; }
-      .hero p { font-size: 1.1rem; }
-      h2 { font-size: 1.8rem; }
-      section { padding: 3rem 1.5rem; }
-      nav a { margin-left: 1rem; font-size: 1rem; }
-      header h1 { font-size: 1.8rem; }
-      .skills, .projects, .certifications { grid-template-columns: 1fr; }
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      section {
+        padding: 3rem 1.5rem;
+      }
+
+      nav a {
+        margin-left: 1rem;
+        font-size: 1rem;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
 <body>
-<header>
-  <h1>Sadak Vali</h1>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#certifications">Certifications</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-<section class="hero">
-  <h2>Transforming Code into Digital Impact</h2>
-  <p>Crafting seamless digital experiences using clean code & smart technology.</p>
-</section>
-<section id="about">
-  <h2>About Me</h2>
-  <p>I’m Shaik Sadak Vali — a passionate, creative, and highly motivated Full Stack Developer with an MCA background. I combine technical precision with aesthetic intuition to build user-centric web apps. I thrive on challenges, adapt quickly, and constantly push myself to stay on top of modern development practices.</p>
-  <p>I have a solid foundation in both front-end and back-end technologies. I'm especially interested in performance optimization, clean design, and scalable architecture. Outside of coding, I'm deeply curious about AI, cloud computing, and how technology can solve real-world problems.</p>
-  <div class="resume-download">
-    <a href="https://drive.google.com/file/d/1tlXiC-zLAaWR0n7XMfq2CqZm1OYn6cRa/view?usp=drive_link" target="_self" class="download-btn">
-      <i class="fas fa-file-pdf"></i> View / Download Resume
-    </a>
-  </div>
-</section>
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skills">
-    <div class="card"><h3>Frontend</h3><p>HTML, CSS, JavaScript, React</p></div>
-    <div class="card"><h3>Backend</h3><p>Core Java, Servlets, JSP, Spring</p></div>
-    <div class="card"><h3>Database</h3><p>MySQL, JDBC, Hibernate</p></div>
-    <div class="card"><h3>Other</h3><p>Problem Solving, Communication, Git</p></div>
-  </div>
-</section>
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="projects">
-    <div class="card">
-      <h3>Cyberbullying Detection System</h3>
-      <p>A machine learning-powered app to detect harmful content in real time using NLP. My contribution was building the logic to classify and prevent abusive tweets from spreading, showcasing my blend of AI and social responsibility.</p>
-      <p>The project uses Python, Scikit-learn, and Flask, and is deployed using Heroku. It aims to support a safer internet for all users.</p>
-     <a href="https://drive.google.com/file/d/1yW4hvfU7GYCb1oiUlD86HDhqJcmdc51M/view?usp=drive_link" target="_self">View Project Document</a>
+  <header>
+    <h1>Sadak Vali</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Hi, I'm Sadak — a Full Stack Developer building fast, scalable web apps with Java & Cloud.</h2>
+    <p>Crafting seamless digital experiences using clean code & smart technology.</p>
+    <a href="mailto:sadakshaikk@gmail.com" class="hire-btn">Let's Talk</a>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m Shaik Sadak Vali — a passionate, creative, and highly motivated Full Stack Developer with an MCA background. I combine technical precision with aesthetic intuition to build user-centric web apps.</p>
+    <p>I have a solid foundation in both front-end and back-end technologies. I'm especially interested in performance optimization, clean design, and scalable architecture.</p>
+    <div class="resume-download">
+      <a href="https://drive.google.com/file/d/1Kl4f2Zfm2xXbMv85HXq6bOrXzzP7RWWX/view?usp=drive_link" target="_self" class="download-btn">
+        <i class="fas fa-file-pdf"></i> View / Download Resume
+      </a>
     </div>
-    <div class="card">
-      <h3>Personal Portfolio Website</h3>
-      <p>This very site! Designed with modern design practices, smooth UI/UX, and creative transitions. It reflects my brand, style, and technical abilities. Built using HTML5, CSS3, and a touch of JavaScript for interactivity.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="card"><h3>Frontend</h3><p>HTML, CSS, JavaScript, React</p></div>
+      <div class="card"><h3>Backend</h3><p>Core Java, Servlets, JSP, Spring</p></div>
+      <div class="card"><h3>Database</h3><p>MySQL, JDBC, Hibernate</p></div>
+      <div class="card"><h3>Other</h3><p>Problem Solving, Communication, Git</p></div>
     </div>
-  </div>
-</section>
-<section id="certifications">
-  <h2>Certifications</h2>
-  <div class="certifications">
-    <div class="card">
-      <h3>Amazon Web Services - SkillAP</h3>
-      <p>Completed a certified AWS course by SkillAP, an initiative by the Andhra Pradesh Government. This certificate signifies my ability to work on cloud environments, understand serverless computing, deploy scalable systems, and confidently handle AWS services like EC2, Lambda, and S3.</p>
-      <a href="https://drive.google.com/file/d/1tnu4TZZU2RyTafAMJqSVJeNZz8XxruXb/view?usp=drive_link" target="_self">View Certificate</a>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Cyberbullying Detection System</h3>
+        <p>🧠 Problem: Detecting harmful language on social media using ML</p>
+        <p>🛠️ Tech: Python, NLP, Scikit-learn, Flask, Heroku</p>
+        <p>💼 Role: Built NLP model & backend logic</p>
+        <a href="https://drive.google.com/file/d/1yW4hvfU7GYCb1oiUlD86HDhqJcmdc51M/view?usp=drive_link" target="_self"> View Document</a>
+      </div>
+      <div class="card">
+        <h3>Personal Portfolio Website</h3>
+        <p>This very site! Designed with smooth UI/UX and creative transitions. Built using HTML5, CSS3, and a touch of JavaScript.</p>
+      </div>
     </div>
-    <div class="card">
-      <h3>Full Stack Web Development - Tap Academy</h3>
-      <p>This certificate reflects my dedication to becoming industry-ready. The program included hands-on projects in HTML, CSS, JavaScript, React, Node.js, and MySQL.</p>
-      <p>It also involved building capstone projects, writing RESTful APIs, and working collaboratively using Git and GitHub.</p>
-      <a href="https://drive.google.com/file/d/1tpUEziyIaMXFap5Gz36rYkjX8LOOD_JX/view?usp=drive_link" target="_self">Download Certificate</a>
+  </section>
+
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <div class="certifications">
+      <div class="card">
+        <h3>HackerRank Certified – Java Problem Solving </h3>
+        <p>This certification verifies my foundational problem-solving skills using programming logic and efficiency principles.</p>
+        <a href="https://www.hackerrank.com/certificates/iframe/5783efd7faf0" target="_self">View Certificate</a>
+      </div>
+      <div class="card">
+        <h3>Amazon Web Services - SkillAP</h3>
+        <p>Completed AWS training by SkillAP, an Andhra Pradesh Government initiative. Covered EC2, Lambda, S3, serverless computing & deployments.</p>
+        <a href="https://drive.google.com/file/d/1tnu4TZZU2RyTafAMJqSVJeNZz8XxruXb/view?usp=drive_link" target="_self">View Certificate</a>
+      </div>
+      <div class="card">
+        <h3>Full Stack Web Development - Tap Academy</h3>
+        <p>Learned full stack development (HTML, CSS, JavaScript, React, Node.js, MySQL), created REST APIs, and worked on live projects with GitHub collaboration.</p>
+        <a href="https://drive.google.com/file/d/1tpUEziyIaMXFap5Gz36rYkjX8LOOD_JX/view?usp=drive_link" target="_self">Download Certificate</a>
+      </div>
     </div>
-    <div class="card">
-      <h3>HackerRank - Problem Solving (Basic)</h3>
-      <p>This certification verifies my foundational problem-solving skills using programming logic and efficiency principles. It demonstrates my ability to write optimized, logical solutions under constraints.</p>
-      <a href="https://drive.google.com/file/d/1ya_cjnunAP5IsM-vpMQsabgjYHi8_vqX/view?usp=drive_link" target="_self">View Certificate</a>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:sadakshaikk@gmail.com">sadakshaikk@gmail.com</a></p>
+    <p>Phone: +91 7674859553</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/sadak-shaik-vali" target="_blank">/in/sadak-shaik-vali</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/sadak.al.shaik" target="_blank">@sadak.al.shaik</a></p>
+    <div class="social-icons">
+      <a href="mailto:sadakshaikk@gmail.com" title="Gmail"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/your-username" target="_self" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/sadak-shaik-vali" target="_self" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/sadak.al.shaik" target="_self" title="Instagram"><i class="fab fa-instagram"></i></a>
     </div>
-  </div>
-</section>
-<section id="contact" class="contact">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:sadakshaikk@gmail.com">sadakshaikk@gmail.com</a></p>
-  <p>Phone: +91 7674859553</p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/sadak-shaik-vali" target="_self">/in/sadak-shaik-vali</a></p>
-  <p>Instagram: <a href="https://www.instagram.com/sadak.al.shaik" target="_self">@sadak.al.shaik</a></p>
-  <div class="social-icons">
-    <a href="mailto:sadakshaikk@gmail.com" title="Gmail"><i class="fas fa-envelope"></i></a>
-    <a href="https://www.linkedin.com/in/sadak-shaik-vali" target="_self" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="https://www.instagram.com/sadak.al.shaik" target="_self" title="Instagram"><i class="fab fa-instagram"></i></a>
-  </div>
-</section>
-<footer>
-  <p>© 2025 Shaik Sadak Vali. Made with ❤️ and creativity. Powered by HTML5, CSS3 & JavaScript.</p>
-</footer>
+  </section>
+
+  <footer>
+    <p>© 2025 Shaik Sadak Vali. Made with ❤️ and creativity. Powered by HTML5, CSS3 & JavaScript.</p>
+  </footer>
 </body>
 </html>
